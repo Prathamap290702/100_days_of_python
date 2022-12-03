@@ -7,6 +7,7 @@
 # name = input("What is your name : ")
 # print(name)
 
+#DAY-01
 greeting = "Welcome to Band Name Generator :)"
 print(greeting)
 city_name = input("Which city did you grow up in : \n")
