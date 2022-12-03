@@ -39,8 +39,26 @@
 # print(round(8/3,3)) 
 # print(8//3) # floor division
 
-# f-strings
+# f-strings 
 # score = 1
 # height = 1.72
 # winning = True
 # print(f"Your score is {score}, your height is {height} and you are winning is {winning}")
+
+# your life in weeks
+# age = input("What is your current age : ")
+# expected_age = input("What is your expected age : ")
+# age_remaining = int(expected_age) - int(age)
+# no_of_days = age_remaining * 365 + (age_remaining//4)
+# no_of_weeks = age_remaining * 52
+# no_of_months = age_remaining * 12
+# print(f"You have {no_of_days}days, {no_of_weeks}weeks and {no_of_months}months to live if you expect to live for {expected_age}years")
+
+# TIP CALCULATOR
+print("Welcome to the tip calculator")
+total_bill = float(input("What was the total bill : ₹"))
+perc = int(input("What percentage tip would you like to give ? 10, 12, or 15? :"))
+tip = total_bill * perc / 100
+total_people = int(input("How many people will split the bill : "))
+each_bill =  round((total_bill + tip) / total_people,2)
+print(f"Each person should pay:  ₹{each_bill}")
