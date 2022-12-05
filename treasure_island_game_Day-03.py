@@ -95,4 +95,23 @@
 #     bill+=1
 # print(f"Total Bill = ${bill} \n Please visit again 😁 and have a nice day.")
 
+# Love Calculator
+# print("Welcome to love calculator")
+# name1 = input("Enter your name : ")
+# name2 = input("Enter their name : ")
+# name1 = name1.lower()
+# name2 = name2.lower()
+# C1 = name1.count('t') + name2.count('t')
+# C2 = name1.count('r') + name2.count('r')
+# C3 = name1.count('u') + name2.count('u')
+# C4 = name1.count('e') + name2.count('e')
+# count1 = C1 + C2 + C3 + C4
+# C5 = name1.count('l') + name2.count('l')
+# C6 = name1.count('o') + name2.count('o')
+# C7 = name1.count('v') + name2.count('v')
+# C8 = name1.count('e') + name2.count('e')
+# count2 = C5 + C6 + C7 + C8    
+# print("Your Love Percentage is " + str(count1)+str(count2) + "%")
+
+# Treasure Island
     
