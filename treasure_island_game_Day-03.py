@@ -64,33 +64,35 @@
 # if year % 400 == 0:
 #             print("Leap Year.")
 
-#PIZZA
+# PIZZA
 
-print("Welcome to the Python Pizza Deliveries 😄")
-size = input('''Which size of pizza do you want to try today?
-S - Small pizza  - $ 15
-M - Medium pizza - $ 20
-L - Large  Pizza - $ 25 
-''')
-pepp = input('''Do you want Pepperoni for your Pizza
-Pepperoni for Small Pizza  - $2
-Pepperoni for Medium Pizza - $3
-Pepperoni for Large Pizza  - $5
-(Y/N) :''')
+# print("Welcome to the Python Pizza Deliveries 😄")
+# size = input('''Which size of pizza do you want to try today?
+# S - Small pizza  - $ 15
+# M - Medium pizza - $ 20
+# L - Large  Pizza - $ 25
+# ''')
+# pepp = input('''Do you want Pepperoni for your Pizza
+# Pepperoni for Small Pizza  - $2
+# Pepperoni for Medium Pizza - $3
+# Pepperoni for Large Pizza  - $5
+# (Y/N) :''')
 
-if size == 'S':
-    bill = 15
-    if pepp == 'Y':
-        bill+=2    
-elif size == 'M':
-    bill = 20
-    if pepp == 'Y':
-        bill+=3 
-elif size == 'L':
-    bill = 25
-    if pepp == 'Y':
-        bill+=5  
-ches = input("Do you want Extra Cheese on your Pizza for just $1 (Y/N) : ")
-if ches == 'Y':
-    bill+=1
-print(f"Total Bill = ${bill} \n Please visit again 😁 and have a nice day.")
+# if size == 'S':
+#     bill = 15
+#     if pepp == 'Y':
+#         bill+=2
+# elif size == 'M':
+#     bill = 20
+#     if pepp == 'Y':
+#         bill+=3
+# elif size == 'L':
+#     bill = 25
+#     if pepp == 'Y':
+#         bill+=5
+# ches = input("Do you want Extra Cheese on your Pizza for just $1 (Y/N) : ")
+# if ches == 'Y':
+#     bill+=1
+# print(f"Total Bill = ${bill} \n Please visit again 😁 and have a nice day.")
+
+    
