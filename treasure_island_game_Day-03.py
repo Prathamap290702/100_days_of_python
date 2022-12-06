@@ -110,7 +110,7 @@
 # C6 = name1.count('o') + name2.count('o')
 # C7 = name1.count('v') + name2.count('v')
 # C8 = name1.count('e') + name2.count('e')
-# count2 = C5 + C6 + C7 + C8    
+# count2 = C5 + C6 + C7 + C8
 # print("Your Love Percentage is " + str(count1)+str(count2) + "%")
 
 # Treasure Island
@@ -134,3 +134,46 @@ o o o o    oo"  o"      "o    $$o$"     o o$""  o$      "$  "oo   o o o o
            $"                                                 "$
            $"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$
 ''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
+ready = input("Are you ready to go on the adventure ? (Y / N) : ").lower()
+if ready == 'y':
+    turn = input(
+        "\n\nThere is a turn ahead, do you want to take right or left ? ").lower()
+    if turn == 'left':
+        how = input(
+            "\n\nYou reach to a sea shore and see an island not so near by, What will you do, wait for boat (b) / swim to the island (s) ?").lower()
+        if how == 'b':
+            door = input(
+                "\n\nYou reached the island safely there are three doors in a house on the shore, Which door will you open : Red / Blue / Yellow : ").lower()
+            if door == 'blue':
+                print('''\n\nCongratulations!!!
+              You found the Treasure....''')
+                print('''                                    o
+                                   $""$o
+                                  $"  $$
+                                   $$$$
+                                   o "$o
+                                  o"  "$
+             oo"$$$"  oo$"$ooo   o$    "$    ooo"$oo  $$$"o
+o o o o    oo"  o"      "o    $$o$"     o o$""  o$      "$  "oo   o o o o
+"$o   ""$$$"   $$         $      "   o   ""    o"         $   "o$$"    o$$
+  ""o       o  $          $"       $$$$$       o          $  ooo     o""
+     "o   $$$$o $o       o$        $$$$$"       $o        " $$$$   o"
+      ""o $$$$o  oo o  o$"         $$$$$"        "o o o o"  "$$$  $
+        "" "$"     """""            ""$"            """      """ "
+         "oooooooooooooooooooooooooooooooooooooooooooooooooooooo$
+          "$$$$"$$$$" $$$$$$$"$$$$$$ " "$$$$$"$$$$$$"  $$$""$$$$
+           $$$oo$$$$   $$$$$$o$$$$$$o" $$$$$$$$$$$$$$ o$$$$o$$$"
+           $"""""""""""""""""""""""""""""""""""""""""""""""""""$
+           $"                                                 "$
+           $"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$
+''')
+            else:
+                print("\n\nKhatam tata good bye gaya :( \n GAME OVER AMIGO....")
+        else:
+            print("\n\nSome time you should try to play safe ;) \n GAME OVER AMIGO....")
+    else:
+        print("\n\nAll rights are not always right :( \n GAME OVER AMIGO....")
+else:
+    print("\n\nYou need to gather some courage then try again some other time.")
