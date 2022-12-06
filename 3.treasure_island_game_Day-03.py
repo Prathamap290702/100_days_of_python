@@ -114,7 +114,7 @@
 # print("Your Love Percentage is " + str(count1)+str(count2) + "%")
 
 # Treasure Island
-print('''                                    o
+print('''                            o
                                    $""$o
                                   $"  $$
                                    $$$$
@@ -149,7 +149,7 @@ if ready == 'y':
             if door == 'blue':
                 print('''\n\nCongratulations!!!
               You found the Treasure....''')
-                print('''                                    o
+                print('''            o
                                    $""$o
                                   $"  $$
                                    $$$$
