@@ -7,7 +7,6 @@
 # name = input("What is your name : ")
 # print(name)
 
-
 #DAY-01
 greeting = "Welcome to Band Name Generator :)"
 print(greeting)
