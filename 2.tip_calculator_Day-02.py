@@ -54,6 +54,7 @@
 # no_of_months = age_remaining * 12
 # print(f"You have {no_of_days}days, {no_of_weeks}weeks and {no_of_months}months to live if you expect to live for {expected_age}years")
 
+
 # TIP CALCULATOR
 print("Welcome to the tip calculator")
 total_bill = float(input("What was the total bill : ₹"))
