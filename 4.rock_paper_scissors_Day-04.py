@@ -46,3 +46,58 @@ import random
 # selected_row = map[vertical - 1]
 # selected_row[horizontal - 1] ="😁"
 # print(f"{row1}\n{row2}\n{row3}")
+# Rock Paper Scissors ASCII Art
+
+# Rock
+stone = ("""
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+""")
+
+# Paper
+paper = ("""
+     _______
+---'    ____)____
+           ______)
+          _______)
+         _______)
+---.__________)
+""")
+
+# Scissors
+scissors = ("""
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+""")
+your_choice = int(input("Choose 0 / 1 / 2 for stone / paper / scissors :"))
+choice = random.randint(0, 2)
+print("You : ")
+if your_choice == 0:
+    print(stone)
+elif your_choice == 1:
+    print(paper)
+elif your_choice == 2:
+    print(scissors)
+
+print("Computer : ")
+if choice == 0:
+    print(stone)
+elif choice == 1:
+    print(paper)
+elif choice == 2:
+    print(scissors)
+    
+if your_choice - choice == 1 or your_choice - choice == -2:
+    print("You Win!!!")
+elif choice - your_choice == 1 or your_choice - choice == 2:
+    print("You Lose...")
+elif your_choice == choice:
+    print("Tie")
