@@ -4,3 +4,4 @@ Day-1: print,input,variable,string manipulations
 Day-2:  Data types, Numbers,operations,Type conversion, fstrings
 Day-3: Conditional statements, logical operators, Code Blocks and Scope
 Day-4: Randomization and Python Lists
+Day-5: Loops
