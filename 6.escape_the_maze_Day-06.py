@@ -95,6 +95,7 @@
 #     else:
 #         move()
 
+
 #escape the maze 
 # def turn_around():
 #     turn_left()
@@ -104,6 +105,7 @@
 #     turn_left()
 #     turn_left()
 #     turn_left()
+
 # while at_goal() != True:
 #     if front_is_clear() == True and right_is_clear() == True:
 #         turn_right()
