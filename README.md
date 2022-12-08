@@ -6,3 +6,4 @@ Day-03 : Conditional statements, logical operators, Code Blocks and Scope
 Day-04 : Randomization and Python Lists
 Day-05 : Loops
 Day-06 : Functions, Code Blocks, While Loops
+Day-07 : Hangman Project
