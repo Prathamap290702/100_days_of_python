@@ -7,3 +7,4 @@ Day-04 : Randomization and Python Lists
 Day-05 : Loops
 Day-06 : Functions, Code Blocks, While Loops
 Day-07 : Hangman Project
+Day-08 : Caesar Cipher - Functions with input and arguments and parameters
