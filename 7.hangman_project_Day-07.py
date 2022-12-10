@@ -288,14 +288,22 @@ while end_of_game == False:
         char = word[pos]
         if char == guess:
             display[pos] = guess
+    print(hgmn[6-lives])
     print(display)
     if guess not in word:
-        print(hgmn[6-lives])
-        lives -= 1
+        if lives >= 0:
+            print(hgmn[6-lives])
+            lives -= 1
+        else:
+            end_of_game = True
+            print(hgmn[6-lives])
+            print("You Lose.")
     # print(display)
     if "_" not in display:
         end_of_game = True
+        print(hgmn[6-lives])
         print("You won.")
     if lives > 6:
         end_of_game = True
+        print(hgmn[6-lives])
         print("You Lose.")
