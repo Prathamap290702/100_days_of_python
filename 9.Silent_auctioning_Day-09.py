@@ -45,3 +45,30 @@
 #     else:
 #         students_grades[names] = "FAIL"
 # print(students_grades)
+
+# # nesting
+# capitals = {
+#     "France": "Paris",
+#     "Germany": "Berlin"
+# }
+# #list in dictionary
+# travel_log = {
+#     "France": ["Paris", "lille", "Dijon"],
+#     "Germany": ["Berlin", "Hamburg", "Stuttgart"]
+# }
+# #dictionary in dictionary
+# travel_log = {
+#     "France": {"Cities_vistied": ["Paris", "lille", "Dijon"], "Total_visits": 12},
+#     "Germany": {"Cities_vistied": ["Berlin", "Hamburg", "Stuttgart"], "Total_visits": 12}
+#     }
+# #dictionary in list
+# travel_log = [
+#     {"Country" : "France" ,"Cities_vistied" : ["Paris", "lille", "Dijon"], "Total_visits": 12},
+#     {"Country" :"Germany", "Cities_vistied": ["Berlin", "Hamburg", "Stuttgart"], "Total_visits": 5}
+# ]
+
+travel_log = [
+    {"Country" : "France" ,"Cities_vistied" : ["Paris", "lille", "Dijon"], "Total_visits": 12},
+    {"Country" :"Germany", "Cities_vistied": ["Berlin", "Hamburg", "Stuttgart"], "Total_visits": 5}
+]
+def add_new_country()
