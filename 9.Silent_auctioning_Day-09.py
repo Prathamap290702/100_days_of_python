@@ -67,8 +67,61 @@
 #     {"Country" :"Germany", "Cities_vistied": ["Berlin", "Hamburg", "Stuttgart"], "Total_visits": 5}
 # ]
 
-travel_log = [
-    {"Country" : "France" ,"Cities_vistied" : ["Paris", "lille", "Dijon"], "Total_visits": 12},
-    {"Country" :"Germany", "Cities_vistied": ["Berlin", "Hamburg", "Stuttgart"], "Total_visits": 5}
-]
-def add_new_country()
+# travel_log = [
+#     {"Country" : "France" ,"Cities_vistied" : ["Paris", "lille", "Dijon"], "Total_visits": 12},
+#     {"Country" :"Germany", "Cities_vistied": ["Berlin", "Hamburg", "Stuttgart"], "Total_visits": 5}
+# ]
+# def add_new_country(country_visited, times_visited, cities_visited):
+#     new_country = {}
+#     new_country["Country"] = country_visited
+#     new_country["Total_visits"] = times_visited
+#     new_country["Cities_visited"] = cities_visited
+#     travel_log.append(new_country)
+
+# add_new_country("Russia", 2, ["Moscow", "St. Petersburg"])
+# print(travel_log)
+
+
+# Silent auction
+import os
+
+logo = '''
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\\
+                       .-------------.
+                      /_______________\\
+'''
+print(logo)
+
+
+def add_new_bidder(key, value):
+    bids[key] = value
+
+def winner():
+    max = 0
+    win = ""
+    for keys in bids:
+        if bids[keys] >= max:
+            max = bids[keys]
+            win = keys
+    print(f"The winner of bid is {win} with a bid of ${max}.")
+auction = True
+bids = {}
+while auction:
+    key = input("What is your name : ")
+    value = int(input("What is your Bid price : $"))
+    add_new_bidder(key, value)
+    loop = input("Are there any more bidders (Y/N) : ").lower()
+    if loop == "y":
+        os.system('cls')
+    else:
+        auction = False
+        winner()
+
