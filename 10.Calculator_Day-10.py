@@ -44,6 +44,23 @@
 # print(f"The {month} of {year} has {days} days in it.")
 
 # Calculator
+import os
+logo = """
+ _____________________
+|  _________________  |
+| | Pythonista   0. | |  .----------------.  .----------------.  .----------------.  .----------------. 
+| |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+|  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+| | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+| |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
+| | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
+| |___|___|___| |___| | | |  \ `.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ `.___.'\  | |
+| | 1 | 2 | 3 | | x | | | |   `._____.'  | || ||____|  |____|| || |  |________|  | || |   `._____.'  | |
+| |___|___|___| |___| | | |              | || |              | || |              | || |              | |
+| | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
+| |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------' 
+|_____________________|
+"""
 
 
 def add(num1, num2):
@@ -69,15 +86,17 @@ operations_list = {
     "/": divide,
 }
 
-def Calculate(): 
-    num1 = int(input("Enter the first number : "))
+
+def Calculate():
+    print(logo)
+    num1 = float(input("Enter the first number : "))
     on = True
     while on == True:
         operations = input(('''Operations : +
                     -
                     *
                     /\n : '''))
-        num2 = int(input("Enter the next number : "))
+        num2 = float(input("Enter the next number : "))
         operate = operations_list[operations]
         answer = operate(num1, num2)
         print(f"{num1} {operations} {num2} = {answer}")
@@ -87,9 +106,12 @@ def Calculate():
         if loop == 1:
             num1 = answer
         elif loop == 2:
+            os.system('cls')
             Calculate()
         elif loop == 3:
             print("Thank you for using the calculator....")
             on == False
             return
+
+
 Calculate()
