@@ -1,4 +1,5 @@
 import random
+import os
 
 
 def select():
@@ -67,4 +68,5 @@ def play_game():
 
 
 while input("Do you want to play Blackjack (y/n) : ").lower() == 'y':
+    os.system('cls')
     play_game()
