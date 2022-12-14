@@ -40,6 +40,19 @@
 #     enemies = ["Skeleton", "Zombie", "Alien"]
 #     if game_level<5:
 #         new_enemy = enemies[0]
-        
+
 #     print(new_enemy)
 # create_enemy()
+
+# modifying global variable
+# use global before the varible name
+# enemies = 1
+
+# def xyz():
+#     global enemies
+#     enemies = 2
+
+# xyz()
+# print(enemies)
+
+#Number Guessing game:
