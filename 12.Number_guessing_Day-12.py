@@ -55,4 +55,39 @@
 # xyz()
 # print(enemies)
 
-#Number Guessing game:
+# Global constants
+# all upper case
+# PI = 3.14
+# URL = "https://www.google.com"
+
+
+# Number Guessing game:
+import random
+lives = 0
+
+
+def game(lives):
+    num = random.randint(1, 101)
+    while lives > 0:
+        print(f"You have {lives} attempts remaining to guess the number.")
+        guess = int(input("Make a guess : "))
+        if num > guess:
+            print("Too low.")
+        elif num < guess:
+            print("Too high.")
+        elif num == guess:
+            print(f"You got it! The answer was {guess}.")
+            return
+        lives -= 1
+    if lives == 0:
+        print("You ran out of guesses, You lose.")
+
+
+print("Welcome to the Number Guessing game!")
+level = input("Choose a difficulty. Type 'easy' or 'hard' : ").lower()
+if level == 'easy':
+    lives = 10
+    game(lives)
+else:
+    lives = 5
+    game(lives)
