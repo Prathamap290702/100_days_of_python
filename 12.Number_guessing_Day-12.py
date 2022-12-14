@@ -64,7 +64,10 @@
 # Number Guessing game:
 import random
 lives = 0
-
+logo =''' ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ ____ ____ ____ 
+||N |||u |||m |||b |||e |||r |||       |||G |||u |||e |||s |||s |||i |||n |||g ||
+||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__|||__|||__|||__||
+|/__\|/__\|/__\|/__\|/__\|/__\|/_______\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|'''
 
 def game(lives):
     num = random.randint(1, 101)
@@ -84,6 +87,7 @@ def game(lives):
 
 
 print("Welcome to the Number Guessing game!")
+print(logo)
 level = input("Choose a difficulty. Type 'easy' or 'hard' : ").lower()
 if level == 'easy':
     lives = 10
