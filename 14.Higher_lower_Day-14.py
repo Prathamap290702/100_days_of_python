@@ -327,6 +327,7 @@ def play():
     score = 0
     loop = True
     c1 = random.choice(data)
+    os.system('cls')
     print(logo)
     while loop == True:
         c2 = random.choice(data)
@@ -352,26 +353,33 @@ def play():
             os.system('cls')
             print(logo)
             print(f"You Scored : {score}")
-            if score<3:
+            if score < 3:
                 print('''Oh dear!!! That's an embarrassing score isn't it?
 
 The average score is 3.
 
 Let's pretend that never happened!''')
-            elif score>=9:
+            elif score >= 9:
                 print("That's an awesome score! You're in the top 10% of players.")
-            elif score>=3 and score <=4 :
+            elif score >= 3 and score <= 4:
                 print('''The average score is 3.2.
 
 What can we say... you're average!
 
 Stay focussed...''')
-            elif score >4 and score <9:
+            elif score > 4 and score < 9:
                 print('''Excellent! The average score is 3.2 so you're pretty good!
 
 We're impressed! ''')
-                
+
             loop = False
 
 
-play()
+go = True
+while go == True:
+    play()
+    choice = input("Do you want to play again : (Y/N)").lower()
+    if choice == 'n':
+        go = False
+    elif choice == 'y':
+        go = True
