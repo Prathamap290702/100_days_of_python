@@ -13,3 +13,4 @@ Day-10 : Calculator - Functions with outputs
 Day-11 : Capstone Project : Blackjack
 Day-12 : Number guessinng game - scopes 
 Day-13 : Debugging
+Day-14 : Higher or lower (followers) - game project
