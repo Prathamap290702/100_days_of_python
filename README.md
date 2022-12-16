@@ -14,3 +14,4 @@ Day-11 : Capstone Project : Blackjack
 Day-12 : Number guessinng game - scopes 
 Day-13 : Debugging
 Day-14 : Higher or lower (followers) - game project
+Day-15 : Setup Local Development Environment & Coffee Machine Project
