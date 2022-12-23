@@ -18,16 +18,20 @@ tim.color("red")
 #     tim.left(90)
 
 #dashed lines
-for _ in range(0,15):
-    tim.forward(10)
-    tim.pu()
-    tim.forward(10)
-    tim.pd()
+# for _ in range(0,15):
+#     tim.forward(10)
+#     tim.pu()
+#     tim.forward(10)
+#     tim.pd()
 
+#drawing different shapes
+def draw(sides):
+    for i in range(0,sides):
+        tim.forward(100)
+        tim.left(360/sides)
 
-
-
-
+for i in range (3,11):
+    draw(i)
 
 
 
