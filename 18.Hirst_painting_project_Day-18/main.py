@@ -48,13 +48,19 @@ def random_color():
 #     draw(i)
 direction = [0, 90, 180, 270]
 
-for i in range(0, 200):
-    tim.pensize(15)
-    tim.speed(10)
-    tim.color(random_color())
-    tim.forward(20)
-    tim.setheading(random.choice(direction))
-    # tim.forward(20)
+# for i in range(0, 200):
+#     tim.pensize(15)
+#     tim.speed(10)
+#     tim.color(random_color())
+#     tim.forward(20)
+#     tim.setheading(random.choice(direction))
+#     # tim.forward(20)
+
+
+tim.pensize(10)
+tim.speed(10)
+tim.color(random_color())
+tim.circle(100)
 
 screen = Screen()
 screen.exitonclick()
