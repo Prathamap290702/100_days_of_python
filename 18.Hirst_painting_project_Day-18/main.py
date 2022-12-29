@@ -1,5 +1,6 @@
 import turtle as t
 import random
+import colorgram
 # import turtle
 # tim = turtle.Turtle()//every time we have to write turtle.
 
@@ -56,11 +57,15 @@ direction = [0, 90, 180, 270]
 #     tim.setheading(random.choice(direction))
 #     # tim.forward(20)
 
+tim.speed(20)
 
-tim.pensize(10)
-tim.speed(10)
-tim.color(random_color())
-tim.circle(100)
 
+# def draw_spirograph(size_of_gap):
+#     for _ in range(int(360 / size_of_gap)):
+#         tim.color(random_color())
+#         tim.circle(100)
+#         tim.setheading(tim.heading() + size_of_gap)
+        
+# draw_spirograph(5)
 screen = Screen()
 screen.exitonclick()
