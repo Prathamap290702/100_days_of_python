@@ -6,7 +6,7 @@ import random
 
 # # from turtle import * //import everything
 
-import turtle as t #alias
+import turtle as t  # alias
 
 tim = t.Turtle()
 tim.shape("turtle")
@@ -65,7 +65,7 @@ t.colormode(255)
 # #         tim.color(random_color())
 # #         tim.circle(100)
 # #         tim.setheading(tim.heading() + size_of_gap)
-        
+
 # # draw_spirograph(5)
 # rgb_colors = []
 # colors = colorgram.extract("download.jpg", 30)
@@ -75,14 +75,25 @@ t.colormode(255)
 #     b = color.rgb.b
 #     new_color = (r,g,b)
 #     rgb_colors.append(new_color)
-    
-    
-# print(rgb_colors)
-color_list = [(225, 229, 237), (241, 234, 215), (242, 229, 238), (224, 239, 231), (191, 166, 121), (142, 165, 189), (136, 94, 57), (63, 100, 135), (219, 207, 130), (13, 23, 55), (183, 149, 168), (144, 175, 154), (56, 22, 10), (172, 152, 50), (51, 13, 27), (74, 116, 85), (124, 80, 99), (12, 35, 20), (178, 185, 217), (30, 51, 120), (212, 179, 195), (171, 205, 185), (159, 106, 133), (101, 120, 171), (116, 32, 49), (95, 152, 110), (123, 36, 23), (30, 86, 61), (165, 202, 211), (172, 106, 94)]
-tim.setheading(225)
-for i in range(10):
-    tim.dot(20,random.choice(color_list))
-    tim.forward(50)
 
+
+# print(rgb_colors)
+color_list = [(225, 229, 237), (241, 234, 215), (242, 229, 238), (224, 239, 231), (191, 166, 121), (142, 165, 189), (136, 94, 57), (63, 100, 135), (219, 207, 130), (13, 23, 55), (183, 149, 168), (144, 175, 154), (56, 22, 10), (172, 152, 50), (51,
+                                                                                                                                                                                                                                                   13, 27), (74, 116, 85), (124, 80, 99), (12, 35, 20), (178, 185, 217), (30, 51, 120), (212, 179, 195), (171, 205, 185), (159, 106, 133), (101, 120, 171), (116, 32, 49), (95, 152, 110), (123, 36, 23), (30, 86, 61), (165, 202, 211), (172, 106, 94)]
+tim.setheading(225)
+tim.penup()
+tim.hideturtle()
+tim.forward(300)
+tim.setheading(0)
+no_of_dots = 100
+for dot_count in range(1, no_of_dots + 1):
+    tim.dot(20, random.choice(color_list))
+    tim.forward(50)
+    if dot_count % 10 == 0:
+        tim.setheading(90)
+        tim.forward(50)
+        tim.setheading(180)
+        tim.forward(500)
+        tim.setheading(0)
 screen = t.Screen()
-screen.exitonclick() 
+screen.exitonclick()
