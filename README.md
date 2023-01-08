@@ -20,3 +20,4 @@ Day-17 : OOPs- Creating Classes & Quiz Game
 Day-18 : Turtle graphics, tuples and importing modules (Digital art)
 Day-19 : more Turtle graphics , event listener , state and multiple instances, Etch a sketch
 Day-20 : Snake Game - Part 01, Animations and coordinates
+Day-21 : Snake Game - Part 02, Class inheritence and slicing in python 
