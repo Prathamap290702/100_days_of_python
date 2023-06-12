@@ -74,6 +74,16 @@
 # print(df)
 # df.to_csv("Squirrel_count.csv")
 
+# to iterate in a dataframe you can use iterrow
+# eg. for (index, row) in dataframe.iterrow():
+#             print(index) --> gives index nos like 1,2,3,4 etc
+#             print(row) --> this gives output as :
+#               student: Angela
+#               scores: 56
+#               student: Tom
+#               scores: 65
+#               student: Jerry
+#               scores: 89
 # State Game
 import turtle
 import pandas as pd
@@ -97,12 +107,15 @@ guessed_list = []
 while len(guessed_list) < 50:
     answer_state = screen.textinput(title=f"{len(guessed_list)}/50 States guessed", prompt="What's another state name?").title()
     if answer_state == "Exit":
-        missing_states = []
-        for state in data_state_list:
-            if state not in guessed_list:
-                missing_states.append(state)
-                new_data = pd.DataFrame(missing_states)
-                new_data.to_csv("States_to_learn.csv")
+        # missing_states = []
+        # for state in data_state_list:
+        #     if state not in guessed_list:
+        #         missing_states.append(state)
+
+        #by using data comprehension
+        missing_states = [state for state in data_state_list if state not in guessed_list]
+        new_data = pd.DataFrame(missing_states)
+        new_data.to_csv("States_to_learn.csv")
         break
     if answer_state in data_state_list:
         t = turtle.Turtle()
