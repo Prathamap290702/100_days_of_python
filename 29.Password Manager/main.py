@@ -1,16 +1,44 @@
 from tkinter import *
+from tkinter import messagebox
+import pyperclip
+from random import *
+import string
+
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
+def generate_password():
+    password_entry.delete(0, END)
+    letters = list(string.ascii_letters)
+    numbers = ['0','1','2','3','4','5','6','7','8','9']
+    symbols = ['~', ':', "'", '+', '[', '\\', '@', '^',
+               '{', '%', '(', '-', '"', '*', '|', ',', '&', '<', '`', '}', '.', '_', '=', ']', '!', '>', ';', '?', '#', '$', ')', '/']
+    password_letters = [choice(letters) for _ in range(randint(8,10))]
+    password_numbers = [choice(numbers) for _ in range(randint(2,5))]
+    password_symbols = [choice(symbols) for _ in range(randint(2,5))]
+
+    password_list = password_numbers + password_symbols + password_letters
+    shuffle(password_list)
+
+    password = "".join(password_list)
+    password_entry.insert(0, password)
+    pyperclip.copy(password)
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_data():
     website = website_entry.get()
     username = email_entry.get()
     password = password_entry.get()
 
-    with open("data.txt", "a") as file:
-        file.write(f"\n{website} | {username} | {password}")
-    website_entry.delete(0,END)
-    password_entry.delete(0, END)
+    if len(website) == 0 or len(username) == 0 or len(password) == 0:
+        messagebox.showinfo(title="Oops", message="Please make sure you haven't left any field empty.")
+
+    else:
+        is_ok = messagebox.askokcancel(title=f"Website_info: {website}", message = f"These are the details entered: \nEmail: {username} "
+                                       f"\n Password: {password} \nIs it ok to save?")
+        if is_ok:
+            with open("data.txt", "a") as file:
+                file.write(f"{website} | {username} | {password}\n")
+            website_entry.delete(0,END)
+            password_entry.delete(0, END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 # Window
@@ -51,7 +79,7 @@ password_entry.grid(column=1, row=3)
 
 #Buttons
 #Generate
-generate_button = Button(text="Generate Password",width=14)
+generate_button = Button(text="Generate Password",width=14, command=generate_password)
 generate_button.grid(column=2, row=3)
 
 #Add
