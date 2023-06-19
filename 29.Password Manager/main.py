@@ -3,7 +3,7 @@ from tkinter import messagebox
 import pyperclip
 from random import *
 import string
-
+import json
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 def generate_password():
@@ -27,16 +27,46 @@ def save_data():
     website = website_entry.get()
     username = email_entry.get()
     password = password_entry.get()
+    new_data= {website: {
+        "username": username,
+        "password": password,
+    } }
 
     if len(website) == 0 or len(username) == 0 or len(password) == 0:
         messagebox.showinfo(title="Oops", message="Please make sure you haven't left any field empty.")
 
     else:
-        is_ok = messagebox.askokcancel(title=f"Website_info: {website}", message = f"These are the details entered: \nEmail: {username} "
+        is_ok = messagebox.askokcancel(title=f"Website_info: {website}", message=f"These are the details entered: \nEmail: {username} "
                                        f"\n Password: {password} \nIs it ok to save?")
         if is_ok:
-            with open("data.txt", "a") as file:
-                file.write(f"{website} | {username} | {password}\n")
+            # used to write in a txt file
+            # with open("data.txt", "a") as file:
+            #     file.write(f"{website} | {username} | {password}\n")
+
+            #using a JSON file
+        try:
+            with open("data.json", "r") as file:
+                # json.dump(new_data, file, indent=4)#how to write in json file
+                # data = json.load(file) #how to read json file
+                # print(data)
+
+                # # 3-step
+                # # Reading old data
+                data = json.load(file)
+                # print(data)
+                # #updating old data with new data
+        except FileNotFoundError:
+            with open("data.json", "w") as file:
+                # saving new data
+                json.dump(data, file, indent=4)
+        else:
+            data.update(new_data)
+
+            with open("data.json", "w") as file:
+                # saving new data
+                json.dump(data, file, indent=4)
+
+        finally:
             website_entry.delete(0,END)
             password_entry.delete(0, END)
 
