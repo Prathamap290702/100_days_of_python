@@ -44,31 +44,50 @@ def save_data():
             #     file.write(f"{website} | {username} | {password}\n")
 
             #using a JSON file
-        try:
-            with open("data.json", "r") as file:
-                # json.dump(new_data, file, indent=4)#how to write in json file
-                # data = json.load(file) #how to read json file
-                # print(data)
+            try:
+                with open("data.json", "r") as file:
+                    # json.dump(new_data, file, indent=4)#how to write in json file
+                    # data = json.load(file) #how to read json file
+                    # print(data)
 
-                # # 3-step
-                # # Reading old data
-                data = json.load(file)
-                # print(data)
-                # #updating old data with new data
-        except FileNotFoundError:
-            with open("data.json", "w") as file:
-                # saving new data
-                json.dump(data, file, indent=4)
+                    # # 3-step
+                    # # Reading old data
+                    data = json.load(file)
+                    # print(data)
+                    # #updating old data with new data
+            except FileNotFoundError:
+                with open("data.json", "w") as file:
+                    # data = json.load(file)
+                    # saving new data
+                    json.dump(new_data, file, indent=4)
+            else:
+                data.update(new_data)
+
+                with open("data.json", "w") as file:
+                    # saving new data
+                    json.dump(data, file, indent=4)
+
+            finally:
+                website_entry.delete(0,END)
+                password_entry.delete(0, END)
+
+# ---------------------------- SEARCH FUNCTION ------------------------------- #
+def find_password():
+    website = website_entry.get()
+    try:
+        with open("data.json") as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        messagebox.showinfo(title="Error", message="No Data File Found.")
+    else:
+        if website in data:
+            email = data[website]["username"]
+            password =  data[website]["password"]
+            password_entry.insert(0, password)
+            pyperclip.copy(password)
+            messagebox.showinfo(title=f"{website} Credentials", message=f"Email: {email}\nPassword: {password}")
         else:
-            data.update(new_data)
-
-            with open("data.json", "w") as file:
-                # saving new data
-                json.dump(data, file, indent=4)
-
-        finally:
-            website_entry.delete(0,END)
-            password_entry.delete(0, END)
+            messagebox.showinfo(title="Error", message=f"No details for {website} exists.")
 
 # ---------------------------- UI SETUP ------------------------------- #
 # Window
@@ -87,8 +106,8 @@ canvas.grid(column=1, row = 0)
 website_label = Label(text="Website:")
 website_label.grid(column=0, row=1)
 
-website_entry = Entry(width = 52 )
-website_entry.grid(column=1, row=1,columnspan=2)
+website_entry = Entry(width = 33 )
+website_entry.grid(column=1, row=1)
 website_entry.focus()
 
 
@@ -104,7 +123,7 @@ email_entry.insert(0, "prathamap2002@gmail.com")
 password_label = Label(text="Password:")
 password_label.grid(column=0, row=3)
 
-password_entry = Entry(width=34)
+password_entry = Entry(width=33)
 password_entry.grid(column=1, row=3)
 
 #Buttons
@@ -115,6 +134,10 @@ generate_button.grid(column=2, row=3)
 #Add
 add_button = Button(text="Add", width=44,command=save_data)
 add_button.grid(column=1, row=4, columnspan=2)
+
+#Search
+search_button = Button(text="Search", width=14, command=find_password)
+search_button.grid(column=2, row=1)
 
 
 window.mainloop()
