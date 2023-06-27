@@ -22,3 +22,19 @@ Day-19 : more Turtle graphics , event listener , state and multiple instances, E
 Day-20 : Snake Game - Part 01, Animations and coordinates
 Day-21 : Snake Game - Part 02, Class inheritence and slicing in python 
 Day-22 : Pong Game - The Arcade Game
+Day-23 : SKIPPED
+Day-24 : SKIPPED
+Day-25 : Pandas - Squirrel census, 50 states
+Day-26 : Comprehensions - NATO pneumonics
+Day-27 : Tkinter - Mile to km converter
+Day-28 : POMODORO App
+Day-29 : Password Manager
+Day-30 : Error handling & JSON
+Day-31 : Flash Card Project - Language Learner
+Day-32 : Automated Birthday Wisher #SMTP not working due to 2way authentication 
+Day-33 : API - ISS tracker, kayne quotes
+Day-34 : GUI Quiz App
+Day-35 : API - Weather Alert System
+Day-36 : Stock News App
+Day-37 : 
+ 
