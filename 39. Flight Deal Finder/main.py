@@ -2,6 +2,7 @@
 from data_manager import DataManager
 from datetime import datetime, timedelta
 from pprint import pprint
+from notification_manager import NotificationManager
 from flight_search import FlightSearch
 
 
@@ -9,6 +10,7 @@ sheet = DataManager()
 flight_search = FlightSearch()
 sheet_info = sheet.info()
 ORIGIN_CITY_IATA = "BOM"
+notification_manager = NotificationManager()
 # pprint(sheet_info)
 
 
@@ -32,3 +34,7 @@ for destination in sheet_info:
         from_time=tomorrow,
         to_time=six_month_from_today
     )
+    if flight.price < destination["lowestPrice"]:
+        notification_manager.send_sms(
+            message=f"Low price alert! Only ₹{flight.price} to fly from {flight.origin_city}-{flight.origin_airport} to {flight.destination_city}-{flight.destination_airport}, from {flight.out_date} to {flight.return_date}."
+        )

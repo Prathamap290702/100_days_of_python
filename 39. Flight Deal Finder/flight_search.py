@@ -1,10 +1,11 @@
 import requests
 from pprint import pprint
 from flight_data import FlightData
+import os
 
 
-TEQUILA_ENDPOINT = "https://api.tequila.kiwi.com"
-TEQUILA_API_KEY = "L8aFw1YSnzki-RqSEX7-1SL1q3_s-GPh"
+TEQUILA_ENDPOINT = os.environ.get("T_ENDPOINT")
+TEQUILA_API_KEY = os.environ.get("T_API_KEY")
 headers = {
             "apikey": TEQUILA_API_KEY,
         }

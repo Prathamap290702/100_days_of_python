@@ -1,12 +1,13 @@
 import requests
 from pprint import pprint
 
-sheety_endpoint = "https://api.sheety.co/9f1ef6678575af9dd08f244a8918a0a4/flightDeals/prices"
+sheety_endpoint = os.environ.get("SHEET_ENDPOINT")
+AUTH_TOKEN = os.environ.get("AUTH_TOKEN")
 class DataManager:
     def __init__(self):
     #This class is responsible for talking to the Google Sheet.
         self.auth_header =   {
-            "Authorization": f"Bearer udankhatoladeals"
+            "Authorization": f"Bearer {AUTH_TOKEN}"
          }
         self.flight_data={}
 
