@@ -21,7 +21,8 @@ class DataManager:
         for cities in self.flight_data:
             new_data = {
                 "price": {
-                    "iataCode": cities["iataCode"]
+                    "iataCode": cities["iataCode"],
+                    "lowestPrice": cities["price"]
                 }
             }
             # pprint(cities)
